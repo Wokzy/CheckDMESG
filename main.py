@@ -10,7 +10,6 @@ def copy_dmesg():
 def clean_crashlog():
 	os.chdir('/opt/var/log/crash-log')
 
-	print(sorted(glob.iglob('*'), key=os.path.getctime, reverse=True))
 	not_in_top_10 = sorted(glob.iglob('*'), key=os.path.getctime, reverse=True)[10::]
 
 	for file in not_in_top_10:
